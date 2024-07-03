@@ -49,7 +49,7 @@
   // Tables and figures
   show figure: set figure.caption(separator: [.#h(0.5em)])
   show figure.caption: set align(left)
-  show figure.caption: set text(font: "Gill Sans MT")
+  show figure.caption: set text(font: sans-fonts)
 
   show figure.where(kind: table): set figure.caption(position: top)
   show figure.where(kind: table): set figure(numbering: "I")
@@ -112,7 +112,7 @@
       bottom: 1.5in
     ),
     header: context {
-      set text(font: "Gill Sans MT")
+      set text(font: sans-fonts)
       block(width: 100% + 3.5in - 1in,{
       if counter(page).get().first() > 1 {
         if document-number != none {document-number}
@@ -126,7 +126,7 @@
       }})
     },
     footer: context {
-      set text(font: "Gill Sans MT",size: 8pt)
+      set text(font: sans-fonts,size: 8pt)
       block(width: 100% +3.5in - 1in,{
       if counter(page).get().first() == 1 {
         if type(footer-content) == array {
@@ -160,7 +160,7 @@
         [Page #counter(page).display()]
       }
     })},
-    background: if draft {rotate(45deg,text(font:"Gill Sans MT",size:200pt, fill: rgb("FFEEEE"))[DRAFT])}
+    background: if draft {rotate(45deg,text(font:sans-fonts,size:200pt, fill: rgb("FFEEEE"))[DRAFT])}
   )
 
   set par(
@@ -190,7 +190,7 @@
       upper(subtitle)
     })
   let authorblock(authors) = wideblock({
-    set text(font: "Gill Sans MT", size: 11pt)
+    set text(font: sans-fonts, size: 11pt)
     v(1em)
     for i in range(calc.ceil(authors.len() / 3)) {
       let end = calc.min((i + 1) * 3, authors.len())
@@ -218,19 +218,19 @@
       }
     }})
   let abstractblock(abstract) = wideblock({
-      set text(font: "Gill Sans MT")
+      set text(font: sans-fonts)
       set par(hanging-indent: 3em)
       h(3em)
       abstract
     })
   let tocblock() = wideblock({
-      set text(font: "Gill Sans MT")
+      set text(font: sans-fonts)
       outline(indent:1em,title:none,depth:2)
     })
 
   titleblock(title:title, subtitle:subtitle)
   authorblock(authors)
-  text(size:11pt,font: "Gill Sans MT",{
+  text(size:11pt,font: sans-fonts,{
     if date != none {upper(date.display("[month repr:long] [day], [year]"))}
     linebreak()
     if document-number != none {document-number}
@@ -282,7 +282,7 @@ Takes 2 optional keyword and 1 required argument:
     notecounter.step()
     text(weight:"bold",super(notecounter.display()))
   }
-  text(size:9pt,font: "Gill Sans MT",margin-note(if numbered {
+  text(size:9pt,font: sans-fonts,margin-note(if numbered {
     text(weight:"bold",font:"Lucida Bright",size:11pt,{
       super(notecounter.display())
       text(size: 9pt, " ")
