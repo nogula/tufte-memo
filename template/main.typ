@@ -1,4 +1,4 @@
-#import "@preview/tufte-memo:0.1.1": *
+#import "@preview/tufte-memo:0.1.2": *
 
 #show: template.with(
   title: [Tufte inspired Typst template],
