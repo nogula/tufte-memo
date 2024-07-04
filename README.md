@@ -6,7 +6,7 @@ For usage, see the usage guide [here](https://github.com/nogula/tufte-memo/blob/
 The template provides handy functions: `template`, `note`, and `wideblock`. To create a document with this template, use:
 
 ```typst
-#import "@preview/tufte-memo:0.1.0": *
+#import "@preview/tufte-memo:0.1.2": *
 
 #show: template.with(
     title: [Document Title],
