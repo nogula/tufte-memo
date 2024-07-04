@@ -164,7 +164,7 @@
   )
 
   set par(
-    justify: true,
+    // justify: true,
     leading: 0.65em,
     first-line-indent: 1em
   )
