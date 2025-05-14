@@ -1,4 +1,4 @@
-#import "@preview/drafting:0.2.0": *
+#import "@preview/drafting:0.2.2": *
 
 #let wideblock(content) = block(width:100%+2.5in,content)
 
@@ -279,12 +279,12 @@ Takes 2 optional keyword and 1 required argument:
 #let notecounter = counter("notecounter")
 #let note(dy:-2em, numbered:true, content) = {
   if numbered {
-    notecounter.step()
-    text(weight:"bold",super(notecounter.display()))
+    context(notecounter.step())
+    text(weight:"bold",context(super(notecounter.display())))
   }
   text(size:9pt,font: sans-fonts,margin-note(if numbered {
     text(weight:"bold",font:"Lucida Bright",size:11pt,{
-      super(notecounter.display())
+      context(super(notecounter.display()))
       text(size: 9pt, " ")
     })
     content
